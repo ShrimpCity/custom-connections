@@ -9,5 +9,16 @@
       { "label": "VIDEO GAME SERIES", "words": ["ZELDA", "HALO", "MARIO", "SONIC"] },
       { "label": "SLANG FOR FRIEND", "words": ["BUDDY", "PAL", "MATE", "HOMIE"] }
     ]
+  },
+    {
+    "id": 2,
+    "title": "Puzzle 2",
+    "date": "2026-02-28",
+    "groups": [
+      { "label": "COLORS", "words": ["RED", "BLUE", "GREEN", "YELLOW"] },
+      { "label": "FRUITS", "words": ["APPLE", "PEAR", "PLUM", "PEACH"] },
+      { "label": "TOOLS", "words": ["HAMMER", "WRENCH", "SAW", "DRILL"] },
+      { "label": "CARD GAMES", "words": ["POKER", "UNO", "WAR", "GIN"] }
+    ]
   }
 ]
