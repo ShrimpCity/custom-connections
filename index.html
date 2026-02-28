@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Custom Connections</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <h1>Custom Connections</h1>
+      <p class="sub">Pick a puzzle or share a link like <code>#puzzle=1</code></p>
+    </div>
+    <nav class="nav">
+      <button id="homeBtn" class="btn ghost" type="button">Library</button>
+      <button id="resetBtn" class="btn ghost" type="button" title="Clear selections">Reset</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Library -->
+    <section id="libraryView" class="card">
+      <h2 class="cardTitle">Puzzle Library</h2>
+      <div id="libraryList" class="libraryList" aria-live="polite"></div>
+    </section>
+
+    <!-- Game -->
+    <section id="gameView" class="card hidden">
+      <div class="gameTop">
+        <div>
+          <h2 id="puzzleTitle" class="cardTitle">Puzzle</h2>
+          <p id="puzzleMeta" class="meta"></p>
+        </div>
+        <div class="gameActions">
+          <button id="shuffleBtn" class="btn" type="button">Shuffle</button>
+          <button id="submitBtn" class="btn primary" type="button" disabled>Submit 4</button>
+        </div>
+      </div>
+
+      <div id="solvedWrap" class="solvedWrap" aria-live="polite"></div>
+
+      <div id="grid" class="grid" role="grid" aria-label="Word grid"></div>
+
+      <div class="statusRow">
+        <div id="status" class="status" aria-live="polite"></div>
+        <div class="mistakes">
+          Mistakes: <span id="mistakesUsed">0</span>/<span id="mistakesMax">4</span>
+        </div>
+      </div>
+
+      <div class="footerActions">
+        <button id="revealBtn" class="btn danger" type="button">Reveal</button>
+        <button id="copyLinkBtn" class="btn" type="button">Copy Share Link</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>One-page Custom Connections starter. Add puzzles by editing <code>puzzles.json</code>.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
