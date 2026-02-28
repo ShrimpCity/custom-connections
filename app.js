@@ -384,7 +384,11 @@ function wireEvents() {
   });
   $("revealBtn").addEventListener("click", revealAll);
   $("copyLinkBtn").addEventListener("click", copyShareLink);
-
+$("todayBtn").addEventListener("click", () => {
+  const daily = findDailyPuzzle();
+  if (!daily) return;
+  location.hash = `#puzzle=${daily.id}`;
+});
   window.addEventListener("hashchange", route);
 }
 
