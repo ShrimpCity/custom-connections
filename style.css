@@ -123,28 +123,33 @@ body{
 
 .tile{
   user-select:none;
-  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:14px;
-  padding:14px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:16px;
+  padding:16px 10px;
   text-align:center;
   font-weight:800;
-  letter-spacing:.3px;
+  letter-spacing:.5px;
   cursor:pointer;
-  min-height:54px;
+  min-height:60px;
   display:flex;
   align-items:center;
   justify-content:center;
-  transition: transform .05s ease, border-color .08s ease, background .08s ease;
+  transition: all .12s ease;
 }
-.tile:hover{transform: translateY(-1px); border-color: rgba(255,255,255,0.22)}
+.tile:hover{
+  transform: translateY(-2px);
+  border-color: rgba(125,211,252,0.4);
+}
 .tile.selected{
-  border-color: rgba(125,211,252,0.7);
-  background: rgba(125,211,252,0.12);
+  border-color:#7DD3FC;
+  background: rgba(125,211,252,0.18);
+  box-shadow: 0 0 0 2px rgba(125,211,252,0.2);
 }
 .tile.locked{
-  cursor:not-allowed;
-  opacity:0.55;
+  background: rgba(52,211,153,0.15);
+  border-color: rgba(52,211,153,0.5);
+  opacity:0.85;
 }
 
 .solvedWrap{
