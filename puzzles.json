@@ -13,7 +13,7 @@
     {
     "id": 2,
     "title": "Puzzle 2",
-    "date": "2026-02-28",
+    "date": "2026-02-26",
     "groups": [
       { "label": "COLORS", "words": ["RED", "BLUE", "GREEN", "YELLOW"] },
       { "label": "FRUITS", "words": ["APPLE", "PEAR", "PLUM", "PEACH"] },
