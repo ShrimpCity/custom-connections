@@ -343,19 +343,11 @@ function route() {
       initPuzzle(puzzle);
       return;
     }
-    // If the hash is invalid, fall through to daily behavior.
   }
 
-  // DAILY MODE:
-  // If no #puzzle= is provided, automatically load today's puzzle (or closest fallback).
-  const daily = findDailyPuzzle();
-  if (daily) {
-    initPuzzle(daily);
-    return;
-  }
-
-  // If there are no puzzles at all, show library (edge case).
+  // Default: show the library
   setView("library");
+  renderLibrary(); // ensures it always populates when you return
 }
 
 async function loadPuzzles() {
