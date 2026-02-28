@@ -368,8 +368,10 @@ async function loadPuzzles() {
 
 function wireEvents() {
   $("homeBtn").addEventListener("click", () => {
-    location.hash = "";
-  });
+  // Show library explicitly (do NOT clear hash and trigger daily auto-load)
+  history.pushState("", document.title, location.pathname + location.search);
+  setView("library");
+});
   $("resetBtn").addEventListener("click", () => {
     clearSelection();
     $("status").textContent = "Selection cleared.";
