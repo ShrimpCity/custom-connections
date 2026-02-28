@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "title": "Starter Puzzle",
+    "date": "2026-02-27",
+    "groups": [
+      { "label": "PLANETS", "words": ["MERCURY", "VENUS", "EARTH", "MARS"] },
+      { "label": "WEATHER", "words": ["RAIN", "SNOW", "HAIL", "FOG"] },
+      { "label": "VIDEO GAME SERIES", "words": ["ZELDA", "HALO", "MARIO", "SONIC"] },
+      { "label": "SLANG FOR FRIEND", "words": ["BUDDY", "PAL", "MATE", "HOMIE"] }
+    ]
+  }
+]
