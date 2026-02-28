@@ -335,17 +335,27 @@ function parseHash() {
 
 function route() {
   const id = parseHash();
-  if (!id) {
-    setView("library");
+
+  // If a specific puzzle is requested in the URL, load it.
+  if (id) {
+    const puzzle = PUZZLES.find(p => Number(p.id) === Number(id));
+    if (puzzle) {
+      initPuzzle(puzzle);
+      return;
+    }
+    // If the hash is invalid, fall through to daily behavior.
+  }
+
+  // DAILY MODE:
+  // If no #puzzle= is provided, automatically load today's puzzle (or closest fallback).
+  const daily = findDailyPuzzle();
+  if (daily) {
+    initPuzzle(daily);
     return;
   }
-  const puzzle = PUZZLES.find(p => Number(p.id) === Number(id));
-  if (!puzzle) {
-    setView("library");
-    $("status").textContent = "";
-    return;
-  }
-  initPuzzle(puzzle);
+
+  // If there are no puzzles at all, show library (edge case).
+  setView("library");
 }
 
 async function loadPuzzles() {
