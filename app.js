@@ -10,7 +10,38 @@ let state = {
 };
 
 const $ = (id) => document.getElementById(id);
+function todayISO() {
+  // Uses the visitor's local timezone (which is what you want for a daily puzzle experience).
+  const d = new Date();
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
 
+function findDailyPuzzle() {
+  // Priority:
+  // 1) Exact match for today's date
+  // 2) Most recent puzzle in the past (by date)
+  // 3) Fallback: highest id
+  const today = todayISO();
+
+  const dated = PUZZLES
+    .filter(p => typeof p.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(p.date))
+    .slice()
+    .sort((a, b) => a.date.localeCompare(b.date)); // ascending
+
+  const exact = dated.find(p => p.date === today);
+  if (exact) return exact;
+
+  // Most recent past date:
+  const past = dated.filter(p => p.date < today);
+  if (past.length) return past[past.length - 1];
+
+  // Fallback: highest id:
+  const byId = PUZZLES.slice().sort((a, b) => (b.id ?? 0) - (a.id ?? 0));
+  return byId[0] || null;
+}
 function setView(view) {
   const library = $("libraryView");
   const game = $("gameView");
